@@ -1,101 +1,13 @@
 <html>
-<head>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['line']});
-      google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'Meal');
-      data.addColumn('number', 'Blood Sugar');      
-
-      data.addRows([
-        [1,  37.8],
-        [2,  30.9],
-        [3,  25.4],
-        [4,  11.7],
-        [5,  11.9],
-        [6,   8.8],
-        [7,   7.6],
-        [8,  12.3],
-        [9,  16.9],
-        [10, 12.8],
-        [11,  5.3],
-        [12,  6.6],
-        [13,  4.8],
-        [14,  4.2]
-      ]);
-
-      var options = {
-        chart: {
-          title: 'Your Blood Sugar Performance',
-          subtitle: ''
-        },
-        width: 900,
-        height: 500,
-        axes: {
-          x: {
-            0: {side: 'bottom'}
-          }
-        }
-      };
-
-      var chart = new google.charts.Line(document.getElementById('line_top_x'));
-      chart.draw(data, google.charts.Line.convertOptions(options));
-
-
-      var data2 = new google.visualization.DataTable();
-      data2.addColumn('number', 'Day');
-      data2.addColumn('number', 'Exercises');      
-
-      data2.addRows([
-        [1,  37.8],
-        [2,  30.9],
-        [3,  25.4],
-        [4,  11.7],
-        [5,  11.9],
-        [6,   8.8],
-        [7,   7.6],
-        [8,  12.3],
-        [9,  16.9],
-        [10, 12.8],
-        [11,  5.3],
-        [12,  6.6],
-        [13,  4.8],
-        [14,  4.2]
-      ]);
-
-      var options2 = {
-        chart: {
-          title: 'Your Exercise Performance',
-          subtitle: ''
-        },
-        series: {
-            0: { color: '#f1ca3a' },
-            1: { color: '#e7711b' },
-            2: { color: '#f1ca3a' },
-            3: { color: '#6f9654' },
-            4: { color: '#1c91c0' },
-            5: { color: '#43459d' },
-        },
-        width: 900,
-        height: 500,
-        axes: {
-          x: {
-            0: {side: 'bottom'}
-          }
-        }
-      };
-
-      var chart2 = new google.charts.Line(document.getElementById('line_top_y'));
-
-      chart2.draw(data2, google.charts.Line.convertOptions(options2));
-    }
-  </script>
-</head>
-<body>
-  <div id="line_top_x"></div>
-  <div id="line_top_y"></div>
-</body>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <div id="chart_div1" class="chart"></div>
+        <div id="chart_div2" class="chart"></div>
+    </body>
 </html>
